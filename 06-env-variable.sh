@@ -1,4 +1,4 @@
 #!/bin/bash
-COURSE=DevSecOps_with_aws
+EXPORT COURSE=DevSecOps with aws
 
 echo "Course name is: $COURSE"
