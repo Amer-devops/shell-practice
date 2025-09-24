@@ -1,4 +1,4 @@
 #!/bin/bash
-COURSE=DevsecOPs
+COURSE=DevSecOps with aws
 
 echo "Course name is: $COURSE"
