@@ -10,10 +10,15 @@ VALIDATE(){
     echo "ERROR:: Installing $2 is failure"
     exit 1
 else
-    echo "Installing MySQL is SUCCESS"
+    echo "Installing $2 is SUCCESS"
 fi
 }
 
 dnf install mysql -y
+VALIDATE $? "mysql"
+
 dnf install nginx -y
+VALIDATE $? "Nginx"
+
 dnf install phyton3 -y
+VALIDATE $? "python3"
