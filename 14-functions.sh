@@ -12,9 +12,9 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
     echo "ERROR:: Installing $2 is failure"
     exit 1 # failure is other than 0
 
-else
+    else
     echo "Installing $2 is SUCCESS"
-fi
+    fi
 }
 
 dnf install mysql -y
