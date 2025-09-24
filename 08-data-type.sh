@@ -5,4 +5,5 @@ NUMBER2=200
 NUMBER3=300
 
 SUM=$(($NUMBER1+$NUMBER2+$NUMBER3))
-echo"SUM IS : ${SUM}"
+echo "SUM IS : ${SUM}"
+
