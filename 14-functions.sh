@@ -3,14 +3,15 @@
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
-   echo "ERROR:: run the script with root privelege"
+   echo "ERROR:: please run the script with root privelege"
    exit 1 
 fi
 
-VALIDATE(){
+VALIDATE(){ # functions receive inputs through args just like shell script args
     if [ $1 -ne 0 ]; then
     echo "ERROR:: Installing $2 is failure"
-    exit 1
+    exit 1 # failure is other than 0
+
 else
     echo "Installing $2 is SUCCESS"
 fi
