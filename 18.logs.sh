@@ -8,9 +8,10 @@ N="\e[0m"
 
 mkdir -p $LOG_FOLDER
 
-LOG_FOLDER= "/var/log/shell-practice"
+LOG_FOLDER= "/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
+
 
 if [ $USERID -ne 0 ]; then
    echo " please run the script with root previlage"
