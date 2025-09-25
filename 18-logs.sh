@@ -16,7 +16,7 @@ echo "Script executed in: $TOTAL_TIME Seconds"
 mkdir -p $LOGS_FOLDER
 
 echo "Script started executed at: $(date)" 
-START_TIME=$(date + %s)" 
+START_TIME=$(date +%s)
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run this script with root privelege"
@@ -55,4 +55,5 @@ if [ $? -ne 0 ]; then
 else
     echo -e "Python3 already exist ... $Y SKIPPING $N" 
 fi
-END_TIME=$(date + %s)"
+
+END_TIME=$(date +%s)
