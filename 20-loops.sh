@@ -28,11 +28,11 @@ do
 
 dnf list installed $package &>>LOG_FILE
 
-if [ $1 -ne 0 ]; then
+if [ $? -ne 0 ]; then
 dnf install $package -y &>>LOG_FILE
 
 else
- 
+
 echo -e "Already installed...$Y SKIPPING $N"
 
 fi
