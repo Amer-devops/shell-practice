@@ -11,9 +11,7 @@ SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 
 mkdir -p $LOGS_FOLDER
-echo -e"Script started started at: $(date)" | tee -a $LOG_FILE
-
-START_TIME=$(date +%s)
+echo "Script started executed at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run this script with root privelege"
@@ -29,19 +27,18 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
     fi
 }
 
+# $@
+
 for package in $@
 do
+    # check package is already installed or not
     dnf list installed $package &>>$LOG_FILE
 
+    # if exit status is 0, already installed. -ne 0 need to install it
     if [ $? -ne 0 ]; then
         dnf install $package -y &>>$LOG_FILE
         VALIDATE $? "$package"
     else
-        echo -e "Already installed...$Y SKIPPING $N"
+        echo -e "$package already installed ... $Y SKIPPING $N"
     fi
-
 done
-
-END_TIME=$(date +%s)
-TOTAL_TIME=$(($END_TIME - $START_TIME))
-echo -e "time taken for execution : $Y $TOTAL_TIME Seconds $N"
