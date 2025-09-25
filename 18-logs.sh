@@ -9,11 +9,11 @@ N="\e[0m"
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
-SUM=$($END_TIME - $START_TIME)
+SUM=$(($END_TIME - $START_TIME))
 mkdir -p $LOGS_FOLDER
 
 echo "Script started executed at: $(date)" 
-echo "Script START_TIME: $(date + %s)" 
+START_TIME=$(date + %s)" 
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run this script with root privelege"
@@ -52,4 +52,4 @@ if [ $? -ne 0 ]; then
 else
     echo -e "Python3 already exist ... $Y SKIPPING $N" 
 fi
-echo "Script END_TIME: $(date + %s)"
+END_TIME=$(date + %s)"
