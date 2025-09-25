@@ -8,7 +8,7 @@ N="\e[0m"
 
 mkdir -p $LOG_FILE
 
-LOG_FOLDER= "/var/log/shell-script"
+LOG_FOLDER= "/var/log/shell-practice"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
