@@ -47,4 +47,3 @@ if [ $? -ne 0 ]; then
 else
     echo -e "Python3 already exist ... $Y SKIPPING $N"
 fi
-
