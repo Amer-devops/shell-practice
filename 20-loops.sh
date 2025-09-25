@@ -13,6 +13,8 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
 
+START_TIME=$(date +%s)
+
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run this script with root privelege"
     exit 1 # failure is other than 0
@@ -39,3 +41,7 @@ do
     fi
 
 done
+
+END_TIME=$(date +%s)
+TOTAL_TIME=$(($END_TIME - $START_TIME))
+echo -e "time taken for execution : $Y $TOTAL_TIME Seconds $N"
